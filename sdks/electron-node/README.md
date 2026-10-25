@@ -1,6 +1,6 @@
-# @fastagent/edge-sdk (Electron & Node.js)
+# @olaiedge/sdk (Electron & Node.js)
 
-Drop-in embeddable Edge Agent Engine for Electron desktop applications (VS Code forks, Obsidian plugins, custom productivity tools).
+Drop-in embeddable Edge Agent Engine for Electron desktop applications (VS Code forks, Obsidian plugins, CAD extensions, custom productivity tools).
 
 ## Key Features
 
@@ -16,7 +16,7 @@ Drop-in embeddable Edge Agent Engine for Electron desktop applications (VS Code 
 
 ```javascript
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { FastAgentDaemonProcess, FastAgentClient } = require('@fastagent/edge-sdk');
+const { OlaiDaemonProcess, OlaiClient } = require('@olaiedge/sdk');
 const path = require('path');
 
 let daemon;
@@ -24,16 +24,16 @@ let client;
 
 app.whenReady().then(async () => {
   // 1. Boot headless Edge Daemon bound to this process
-  daemon = new FastAgentDaemonProcess({
+  daemon = new OlaiDaemonProcess({
     modelPath: path.join(__dirname, 'models/qwen2.5-1.5b-instruct-q4_k_m.gguf'),
     port: 8085,
     memoryBudgetMb: 2048, // Cap engine memory to 2GB
   });
 
   const endpoint = await daemon.start();
-  console.log('FastAgent Edge Engine Online at:', endpoint);
+  console.log('OlaiEdge Engine Online at:', endpoint);
 
-  client = new FastAgentClient({ baseUrl: endpoint });
+  client = new OlaiClient({ baseUrl: endpoint });
 
   createWindow();
 });

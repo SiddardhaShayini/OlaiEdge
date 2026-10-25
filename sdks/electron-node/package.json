@@ -1,6 +1,6 @@
 {
-  "name": "@fastagent/edge-sdk",
-  "version": "0.3.0",
+  "name": "@olaiedge/sdk",
+  "version": "1.0.0",
   "description": "Drop-in embeddable Edge Agent Engine SDK for Electron and Node.js desktop applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,6 +8,7 @@
     "build": "tsc"
   },
   "keywords": [
+    "olaiedge",
     "fastagent",
     "edge-ai",
     "electron",

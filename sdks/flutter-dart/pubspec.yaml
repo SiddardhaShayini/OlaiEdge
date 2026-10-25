@@ -1,7 +1,7 @@
-name: fast_agent_edge
+name: olaiedge_flutter
 description: Drop-in Edge Agent Engine client library for Flutter desktop applications (Windows, macOS, Linux).
-version: 0.3.0
-homepage: https://github.com/SiddardhaShayini/Optimizing-Local-AI-Agents
+version: 1.0.0
+homepage: https://github.com/SiddardhaShayini/OlaiEdge
 
 environment:
   sdk: '>=2.17.0 <4.0.0'

@@ -49,3 +49,6 @@ export declare class FastAgentClient {
   manageSlot(action?: 'list' | 'compact' | 'evict', sessionId?: string): Promise<any>;
   activateLicense(licenseKey: string): Promise<any>;
 }
+
+export declare const OlaiDaemonProcess: typeof FastAgentDaemonProcess;
+export declare const OlaiClient: typeof FastAgentClient;

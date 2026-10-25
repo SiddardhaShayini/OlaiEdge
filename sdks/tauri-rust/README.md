@@ -1,18 +1,18 @@
-# fastagent-tauri
+# olaiedge-tauri
 
-Native Rust crate for integrating FastAgent Edge Agent Engine into Tauri desktop applications.
+Native Rust crate for integrating the OlaiEdge Agent Engine into Tauri desktop applications.
 
 ## Features
 
-- **Tauri Sidecar Integration:** Spawns `fastagent-edge` as a managed sidecar binary with `--parent-pid` auto-cleanup.
+- **Tauri Sidecar Integration:** Spawns `olai` as a managed sidecar binary with `--parent-pid` auto-cleanup.
 - **Tauri Commands:** Drop-in `#[tauri::command]` handlers for `fastagent_turn`, `fastagent_ask`, and `fastagent_status`.
-- **Slot Caching per Webview Window:** Multiple Tauri windows/tabs map directly to isolated FastAgent slots.
+- **Slot Caching per Webview Window:** Multiple Tauri windows/tabs map directly to isolated OlaiEdge slots.
 - **Zero Cloud Costs & Zero OOMs:** Strict memory budgeting.
 
 ## Integration in `src-tauri/src/main.rs`
 
 ```rust
-use fastagent_tauri::{fastagent_ask, fastagent_turn, fastagent_status, FastAgentConfig, FastAgentState, spawn_sidecar};
+use olaiedge_tauri::{fastagent_ask, fastagent_turn, fastagent_status, FastAgentConfig, FastAgentState, spawn_sidecar};
 use std::sync::Mutex;
 
 fn main() {
@@ -24,7 +24,7 @@ fn main() {
     };
 
     // Spawn sidecar daemon
-    let child = spawn_sidecar("fastagent-edge", &config).expect("Failed to start FastAgent daemon");
+    let child = spawn_sidecar("olai", &config).expect("Failed to start OlaiEdge daemon");
 
     tauri::Builder::default()
         .manage(FastAgentState {

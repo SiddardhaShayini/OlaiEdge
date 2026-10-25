@@ -1,4 +1,4 @@
-# fast_agent_edge (Flutter Desktop)
+# olaiedge_flutter (Flutter Desktop)
 
 Drop-in Edge Agent Engine client library for Flutter desktop applications (Windows, macOS, Linux).
 
@@ -13,7 +13,7 @@ Drop-in Edge Agent Engine client library for Flutter desktop applications (Windo
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:fast_agent_edge/fast_agent_edge.dart';
+import 'package:olaiedge_flutter/olaiedge_flutter.dart';
 
 final client = FastAgentClient(baseUrl: 'http://127.0.0.1:8085');
 

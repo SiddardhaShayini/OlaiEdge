@@ -333,7 +333,10 @@ class FastAgentClient {
   }
 }
 
+// Export both OlaiEdge (primary) and FastAgent (legacy) aliases
 module.exports = {
+  OlaiDaemonProcess: FastAgentDaemonProcess,
+  OlaiClient: FastAgentClient,
   FastAgentDaemonProcess,
   FastAgentClient,
 };

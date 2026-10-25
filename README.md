@@ -272,21 +272,18 @@ python olai.py license verify --token "OLAI-COMM-eyJsaWNlbnNlZSI6IkFjbWUgRGVza3R
 
 ---
 
-## 🚀 Pushing to a New Clean GitHub Repository
+## Contributing & Community
 
-To push this pristine, zero-clutter project into a new GitHub repo:
+We welcome contributions to OlaiEdge! Please see our [Contributing Guide](.github/CONTRIBUTING.md) and [Code of Conduct](.github/CODE_OF_CONDUCT.md) for details on our zero-overhead development philosophy, setting up your local environment, and running the test suite.
 
 ```bash
-# 1. Create a new empty repository on GitHub named 'OlaiEdge'
-# https://github.com/new -> Repository name: OlaiEdge
+# Setup development environment
+git clone https://github.com/SiddardhaShayini/OlaiEdge.git
+cd OlaiEdge
+pip install -e ".[dev]"
 
-# 2. In your local project terminal:
-git init
-git add .
-git commit -m "feat: Initial release of OlaiEdge v1.0 (Successor to FastAgent)"
-git branch -M main
-git remote add origin https://github.com/<your-username>/OlaiEdge.git
-git push -u origin main
+# Run test suite
+pytest
 ```
 
 ---
