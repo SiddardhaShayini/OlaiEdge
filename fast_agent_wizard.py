@@ -9,9 +9,12 @@ from fast_agent import (
     LicenseManager,
 )
 
-st.set_page_config(page_title="FastAgent Edge Engine Wizard", page_icon="⚡", layout="wide")
+st.set_page_config(page_title="OlaiEdge Engine Wizard", page_icon="⚡", layout="wide")
 
-st.title("⚡ FastAgent: Embeddable Edge Agent Engine")
+if os.path.exists("assets/olaiedge-banner.svg"):
+    st.image("assets/olaiedge-banner.svg", width=520)
+
+st.title("⚡ OlaiEdge: Embeddable Edge Agent Engine")
 st.markdown(
     "Diagnostic dashboard and configuration wizard for desktop applications (Electron, Tauri, Flutter). "
     "Verify hardware readiness, dynamic memory budgets, slot caching, and offline licenses."

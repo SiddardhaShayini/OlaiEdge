@@ -1,12 +1,14 @@
-# OlaiEdge: Embeddable "Edge Agent Engine" for Desktop Apps
+<div align="center">
+  <img src="assets/olaiedge-banner.svg" alt="OlaiEdge: Optimizing Local AI at the Edge" width="680"/>
+  <br/><br/>
+  <p><strong>The zero-overhead, headless local AI runtime (packaged as an SDK or background daemon) that desktop developers can drop directly into Electron, Tauri, Flutter, and native desktop applications.</strong></p>
+  <p><em>Formerly known as FastAgent — completely re-engineered for zero-clutter, drop-in desktop deployment.</em></p>
 
-> **The zero-overhead, headless local AI runtime (packaged as an SDK or background daemon) that desktop developers can drop directly into Electron, Tauri, Flutter, and native desktop applications.**  
-> *Formerly known as FastAgent — completely re-engineered for zero-clutter, drop-in desktop deployment.*
-
-[![Tests](https://img.shields.io/badge/tests-26%20passed-brightgreen.svg)]()
-[![License](https://img.shields.io/badge/license-MIT%20%2F%20Commercial-blue.svg)]()
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)]()
-[![Frameworks](https://img.shields.io/badge/frameworks-Electron%20%7C%20Tauri%20%7C%20Flutter%20%7C%20Python-orange.svg)]()
+  [![Tests](https://img.shields.io/badge/tests-26%20passed-brightgreen.svg)]()
+  [![License](https://img.shields.io/badge/license-MIT%20%2F%20Commercial-blue.svg)]()
+  [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)]()
+  [![Frameworks](https://img.shields.io/badge/frameworks-Electron%20%7C%20Tauri%20%7C%20Flutter%20%7C%20Python-orange.svg)]()
+</div>
 
 ---
 
