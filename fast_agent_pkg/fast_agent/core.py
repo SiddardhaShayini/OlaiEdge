@@ -165,7 +165,8 @@ class FastAgent:
     """
     Hardware-adaptive, zero-overhead local LLM agent runtime.
     Features: 8-bit quantized KV cache, LCP prompt caching, safe AST tool calling,
-    GBNF grammar constraints, rolling context, and subprocess deadlock prevention.
+    GBNF grammar constraints, rolling context, memory budget enforcement,
+    and subprocess deadlock prevention.
     """
 
     def __init__(
@@ -175,12 +176,20 @@ class FastAgent:
         max_history_turns: int = 6,
         auto_port: bool = True,
         context_size: int = 2048,
+        memory_budget_mb: Optional[int] = None,
+        ctk: str = "q8_0",
+        ctv: str = "q8_0",
+        batch_size: int = 512,
     ):
         self.requested_port = port
         self.port = find_free_port(port) if auto_port else port
         self.endpoint = f"http://localhost:{self.port}/completion"
         self.max_history_turns = max_history_turns
         self.context_size = context_size
+        self.memory_budget_mb = memory_budget_mb
+        self.ctk = ctk
+        self.ctv = ctv
+        self.batch_size = batch_size
         self.system_prompt_text = ""
         self.conversation_history: List[str] = []
         self.tools: Dict[str, Dict[str, Any]] = {}
@@ -230,12 +239,28 @@ class FastAgent:
         server_dir = os.path.dirname(os.path.abspath(server_binary))
         print(f"[FastAgent] Booting C++ engine via '{server_binary}' on port {self.port}...")
 
+        # Adjust parameters if memory budget is specified
+        if self.memory_budget_mb:
+            model_size_mb = os.path.getsize(resolved_model) / (1024 * 1024)
+            rem = self.memory_budget_mb - model_size_mb
+            if rem < 300:
+                self.context_size = min(1024, self.context_size)
+                self.ctk = "q4_0"
+                self.ctv = "q4_0"
+                self.batch_size = 256
+            elif rem < 600:
+                self.context_size = min(2048, self.context_size)
+                self.ctk = "q8_0"
+                self.ctv = "q8_0"
+                self.batch_size = 256
+
         cmd = [
             server_binary,
             "-m", resolved_model,
             "-c", str(self.context_size),
-            "-ctk", "q8_0",
-            "-ctv", "q8_0",
+            "-ctk", self.ctk,
+            "-ctv", self.ctv,
+            "-b", str(self.batch_size),
             "--port", str(self.port),
         ]
 

@@ -1,0 +1,23 @@
+{
+  "name": "@fastagent/edge-sdk",
+  "version": "0.3.0",
+  "description": "Drop-in embeddable Edge Agent Engine SDK for Electron and Node.js desktop applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "fastagent",
+    "edge-ai",
+    "electron",
+    "desktop-ai",
+    "local-llm",
+    "offline-ai",
+    "slot-caching",
+    "memory-budget"
+  ],
+  "author": "Siddardha Shayini",
+  "license": "MIT",
+  "dependencies": {}
+}

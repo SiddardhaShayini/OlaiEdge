@@ -1,0 +1,13 @@
+name: fast_agent_edge
+description: Drop-in Edge Agent Engine client library for Flutter desktop applications (Windows, macOS, Linux).
+version: 0.3.0
+homepage: https://github.com/SiddardhaShayini/Optimizing-Local-AI-Agents
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  http: ^1.2.0
+
+dev_dependencies:
+  test: ^1.24.0

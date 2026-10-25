@@ -1,20 +1,24 @@
-# C++ Binaries & Libraries
+# C++ Binaries & Libraries (Keep root clean)
 *.exe
 *.dll
 
-# AI Models
+# AI Models (Downloaded via CLI / ModelManager)
 *.gguf
 *.bin
+*.download
 
-# Python Cache & Build
+# Python Cache & Build Artifacts
 __pycache__/
 *.pyc
 *.pyo
 build/
 dist/
 *.egg-info/
+.pytest_cache/
 
-# Local Vector Databases
+# Local Runtime Metadata & Cache
+.olaiedge/
+.fastagent/
 local_agent_memory/
 .lancedb/
 
