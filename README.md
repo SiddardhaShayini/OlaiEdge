@@ -299,6 +299,16 @@ OlaiEdge maintains 100% backward compatibility with FastAgent:
 **Siddardha Shayini**
 - GitHub: [https://github.com/SiddardhaShayini](https://github.com/SiddardhaShayini)
 
+## Acknowledgements & Recognition
+
+OlaiEdge is officially listed as an indexed repository in the **XERJ Corpus Hub**.
+
+[![XERJ Corpus Hub Contributor](https://hub.xerj.org/contributors/SiddardhaShayini/badge.svg)](https://hub.xerj.org/contributors/SiddardhaShayini)
+
+- **Contributor Profile:** [hub.xerj.org/contributors/SiddardhaShayini](https://hub.xerj.org/contributors/SiddardhaShayini)
+- **Indexed Repository:** [SiddardhaShayini/OlaiEdge](https://github.com/SiddardhaShayini/OlaiEdge)
+- **Pinned Commit:** [`b8351919f2`](https://github.com/SiddardhaShayini/OlaiEdge/commit/b8351919f2)
+
 ## License
 
 OlaiEdge is dual-licensed:
